@@ -165,6 +165,11 @@
         setCriterion('lower', hasLower);
         setCriterion('digit', hasDigit);
         setCriterion('special', hasSpecial);
+
+        // Only show the no-repeat criterion after at least 2 characters have been typed
+        if (criteria.norepeat) {
+            criteria.norepeat.style.display = pwd.length >= 2 ? '' : 'none';
+        }
         setCriterion('norepeat', noRepeat);
 
         // ── Tip
